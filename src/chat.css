@@ -1,0 +1,62 @@
+.colors {
+  color: #574f4a, #48b9c7, #faa41a, #ffffff, #48b9c7, #ffffff, #26d076, #dc4405;
+  /* https://slackthemes.net/#/system76 */
+}
+
+.chatBox {
+  color: #3b3836;
+}
+
+/* .conversationsBox {
+  background-color: #574f4a;
+  color: #ffffff;
+} */
+
+.messages {
+  /* max-height: 500px; */
+  min-width: 100%;
+  position: absolute;
+  top: 0px;
+  padding-bottom: 70px;
+  overflow: scroll;
+  overflow-x: visible;
+  /* background-color: burlywood; */
+}
+
+.chatInput {
+  position: fixed;
+  bottom: 0;
+  min-width: 100%;
+}
+
+.messageBox {
+  min-height: 70px;
+  padding-top: 5px;
+}
+.messageUserIcon {
+  background-color: #48b9c7;
+  float: left;
+  height: 45px;
+  width: 45px;
+  shape-outside: circle();
+  clip-path: circle();
+  margin: 5px;
+  padding-top: 10px;
+}
+.messageUserName {
+  font-size: large;
+  float: left;
+  padding: 2px;
+  position: relative;
+}
+.messageTimeStamp {
+  font-size: small;
+  position: relative;
+  left: 10px;
+  padding: 5px;
+}
+.message {
+  left: 2px;
+  position: relative;
+  padding: 2px;
+}
