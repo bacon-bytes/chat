@@ -5,41 +5,133 @@
 
 .appContainer {
   display: grid;
-  grid-template-columns: minmax(55px, 1fr) minmax(100px, 2fr) 10fr;
+  grid-template-columns: minmax(55px, 1fr) minmax(150px, 2fr) 10fr;
   grid-template-rows: 100vh;
 }
 
-.teamsContainer {
-  background-color: #312c29;
-  grid-column-start: 1;
+.overflowEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.allCapTitle {
+  text-transform: uppercase;
+  font-size: small;
+}
+
+/* Teams */
+.teamsContainer {
+  grid-column-start: 1;
+}
+.teams {
+  background-color: #312c29;
+}
+
+.teamIcon {
+  background-color: #26d076;
+  color: #ffffff;
+  height: 45px;
+  width: 45px;
+  shape-outside: circle();
+  clip-path: circle();
+  margin: auto;
+  margin-top: 7px;
+  padding-top: 10px;
+}
+
+/* Channels */
 .channelsContainer {
   background-color: #574f4a;
   grid-column-start: 2;
 }
+
+.channelsWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.channels {
+  background-color: #574f4a;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.channelHeader {
+  background-color: #48b9c7;
+  color: #ffffff;
+  height: 45px;
+  top: 0;
+  text-align: left;
+  padding: 15px;
+  padding-top: 10px;
+  font-size: large;
+}
+
+.availableChannels {
+  margin: 15px;
+  color: #c0c0c0;
+}
+
+.directMessages {
+  padding-top: 50px;
+}
+.contact::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 8px;
+  /* padding-right: 2px; */
+  background-color: #26d076;
+}
+.channelFooterWrapper {
+  display: grid;
+}
+.channelFooter {
+  background-color: #48b9c7;
+  color: #ffffff;
+  height: 65px;
+  bottom: 0px;
+  text-align: center;
+  padding-top: 10px;
+}
+.channelFooterUserIcon {
+  background-color: #060707;
+  float: left;
+  height: 45px;
+  width: 45px;
+  border-radius: 5px;
+  margin: 5px;
+  padding-top: 10px;
+}
+
+.footerUserName {
+  float: left;
+  color: #ffffff;
+  margin: auto;
+  padding-top: 9px;
+  max-width: 100px;
+}
+
+/* Chat */
 .chatContainer {
   grid-column-start: 3;
 }
 
 .chatBox {
-  color: #3b3836;
+  color: #000000;
 }
-
-/* .conversationsBox {
-  background-color: #574f4a;
-  color: #ffffff;
-} */
 
 .messages {
   min-width: 100%;
-  /* position: absolute; */
   top: 0px;
   padding-bottom: 70px;
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
-  /* background-color: burlywood; */
 }
 .messagesWrapper {
   overflow: auto;
@@ -56,6 +148,11 @@
 .messageBox {
   min-height: 70px;
   padding-top: 5px;
+  display: grid;
+  grid-template-columns: minmax(55px, 55px) minmax(150px, 2fr);
+}
+.messageFloatLeft {
+  float: left;
 }
 .messageUserIcon {
   background-color: #48b9c7;

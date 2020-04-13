@@ -9,14 +9,16 @@ const Conversation = ({ messages }) => {
       <div key={index} className="messageBox">
         <div className="messageUserIcon"></div>
         <div>
-          <div className="messageUserName">{messages[index].userName} </div>
-          <div className="messageTimeStamp">
-            {moment(messages[index].timeStamp).format(
-              "MMMM Do YYYY, h:mm:ss a"
-            )}
+          <div>
+            <div className="messageUserName">{messages[index].userName} </div>
+            <div className="messageTimeStamp">
+              {moment(messages[index].timeStamp).format(
+                "MMMM Do YYYY, h:mm:ss a"
+              )}
+            </div>
           </div>
+          <div className="message"> {messages[index].message}</div>
         </div>
-        <div className="message"> {messages[index].message}</div>
       </div>
     ));
   } else message = <div>There don't seem to be any mesages yet.</div>;
