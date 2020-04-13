@@ -3,6 +3,25 @@
   /* https://slackthemes.net/#/system76 */
 }
 
+.appContainer {
+  display: grid;
+  grid-template-columns: minmax(55px, 1fr) minmax(100px, 2fr) 10fr;
+  grid-template-rows: 100vh;
+}
+
+.teamsContainer {
+  background-color: #312c29;
+  grid-column-start: 1;
+}
+
+.channelsContainer {
+  background-color: #574f4a;
+  grid-column-start: 2;
+}
+.chatContainer {
+  grid-column-start: 3;
+}
+
 .chatBox {
   color: #3b3836;
 }
@@ -13,14 +32,19 @@
 } */
 
 .messages {
-  /* max-height: 500px; */
   min-width: 100%;
-  position: absolute;
+  /* position: absolute; */
   top: 0px;
   padding-bottom: 70px;
   overflow: scroll;
-  overflow-x: visible;
+  overflow-x: hidden;
+  height: 100vh;
   /* background-color: burlywood; */
+}
+.messagesWrapper {
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .chatInput {

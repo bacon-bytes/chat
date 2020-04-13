@@ -35,8 +35,10 @@ class Chat extends Component {
   render() {
     return (
       <div className="chatBox">
-        <div className="messages">
-          <Conversation messages={this.state.messages} />
+        <div className="messagesWrapper">
+          <div className="messages">
+            <Conversation messages={this.state.messages} />
+          </div>
         </div>
         <div className="chatInput">
           <ChatInput handleSubmit={this.handleSubmit} />
