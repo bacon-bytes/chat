@@ -17,12 +17,12 @@ class Chat extends Component {
 
   handleSubmit = (message) => {
     let messages = [...this.state.messages];
-    const newMessage = this.returnNewMessage(message);
+    const newMessage = this.postNewMessage(message);
     messages.push(newMessage);
     this.setState({ messages });
   };
 
-  returnNewMessage = (message) => {
+  postNewMessage = (message) => {
     return {
       userId: "5b21ca3eeb7f6fbccd471813",
       userName: "Sean",

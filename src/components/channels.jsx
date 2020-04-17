@@ -1,27 +1,41 @@
 import React, { Component } from "react";
 import "../chat.css";
+import { getTeams } from "../services/fakeTeams";
+import Channel from "./channel";
+import DirectMessage from "./directMessage";
 
 class Channels extends Component {
-  state = {};
+  state = { name: "", channels: [], members: [] };
+
+  componentDidMount() {
+    this.setTeam();
+  }
+
+  setTeam = () => {
+    let team = getTeams().find((x) => x.id === this.props.currentTeamId);
+    let name = team.name;
+    let channels = team.channels;
+    let members = team.members;
+
+    this.setState({ name, channels, members });
+  };
+
   render() {
+    const { name, channels, members } = this.state;
+    const { userName, userId } = this.props;
     return (
       <React.Fragment>
         <div className="channelsWrapper">
           <div className="channels">
             <div className="channelHeader overflowEllipsis">
-              <b> Team Title</b>
+              <b> {name}</b>
             </div>
-
             <div className="availableChannels overflowEllipsis">
               <div className="allCapTitle">Channels</div>
-              <div># channel</div>
-              <div># channel</div>
-              <div># channel</div>
+              <Channel channels={channels} />
               <div className="directMessages">
                 <div className="allCapTitle">direct messages</div>
-                <div className="contact"> contact</div>
-                <div className="contact"> contact</div>
-                <div className="contact"> contact</div>
+                <DirectMessage members={members} userId={userId} />
               </div>
             </div>
 
@@ -29,7 +43,7 @@ class Channels extends Component {
               <div className="channelFooter">
                 <div className="channelFooterUserIcon"></div>
                 <div className="footerUserName overflowEllipsis">
-                  <b>USER NAME THAT HAPPENS TO BE TOO LONG</b>
+                  <b>{userName}</b>
                 </div>
               </div>
             </div>
