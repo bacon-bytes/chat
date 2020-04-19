@@ -154,7 +154,16 @@
 .messageFloatLeft {
   float: left;
 }
-.messageUserIcon {
+.messageUserIconNoBackground {
+  float: left;
+  height: 45px;
+  width: 45px;
+  shape-outside: circle();
+  clip-path: circle();
+  margin: 5px;
+  padding-top: 10px;
+}
+.messageUserIconWithBackground {
   background-color: #48b9c7;
   float: left;
   height: 45px;
@@ -164,6 +173,7 @@
   margin: 5px;
   padding-top: 10px;
 }
+
 .messageUserName {
   font-size: large;
   float: left;

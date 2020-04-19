@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { getUsers } from "../services/fakeUsers";
 
 const DirectMessage = ({ members, userId }) => {

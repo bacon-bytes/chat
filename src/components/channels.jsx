@@ -3,6 +3,7 @@ import "../chat.css";
 import { getTeams } from "../services/fakeTeams";
 import Channel from "./channel";
 import DirectMessage from "./directMessage";
+import UserIcon from "./userIcon";
 
 class Channels extends Component {
   state = { name: "", channels: [], members: [] };
@@ -38,10 +39,10 @@ class Channels extends Component {
                 <DirectMessage members={members} userId={userId} />
               </div>
             </div>
-
             <div className="channelFooterWrapper">
               <div className="channelFooter">
-                <div className="channelFooterUserIcon"></div>
+                {/* <div className="channelFooterUserIcon"></div> */}
+                <UserIcon userId={userId} />
                 <div className="footerUserName overflowEllipsis">
                   <b>{userName}</b>
                 </div>

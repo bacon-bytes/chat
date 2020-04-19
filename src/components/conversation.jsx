@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import "../chat.css";
 import moment from "moment";
+import GetUserIcon from "./userIcon";
+import UserIcon from "./userIcon";
 
 const Conversation = ({ messages }) => {
   let message;
   if (messages.length > 0) {
     message = messages.map((message, index) => (
       <div key={index} className="messageBox">
-        <div className="messageUserIcon"></div>
+        {/* <div
+          className="messageUserIcon"
+           style={{ backgroundImage: 'url("./profileIcons/man-1-100.jpg")' }}
+        >
+        </div> */}
+        <UserIcon userId={messages[index].userId} />
         <div>
           <div>
             <div className="messageUserName">{messages[index].userName} </div>
