@@ -1,47 +1,41 @@
 import React, { Component } from "react";
-import "../chat.css";
-import { getTeams } from "../services/fakeTeams";
-import Channel from "./channel";
 import DirectMessage from "./directMessage";
 import UserIcon from "./userIcon";
+import Channel from "./channel";
+import "../chat.css";
 
 class Channels extends Component {
-  state = { name: "", channels: [], members: [] };
-
-  componentDidMount() {
-    this.setTeam();
-  }
-
-  setTeam = () => {
-    let team = getTeams().find((x) => x.id === this.props.currentTeamId);
-    let name = team.name;
-    let channels = team.channels;
-    let members = team.members;
-
-    this.setState({ name, channels, members });
-  };
-
   render() {
-    const { name, channels, members } = this.state;
-    const { userName, userId } = this.props;
+    const {
+      userName,
+      userId,
+      teamName,
+      channels,
+      members,
+      handleChannelChange,
+      currentChannel,
+    } = this.props;
     return (
       <React.Fragment>
         <div className="channelsWrapper">
           <div className="channels">
             <div className="channelHeader overflowEllipsis">
-              <b> {name}</b>
+              <b> {teamName}</b>
             </div>
             <div className="availableChannels overflowEllipsis">
-              <div className="allCapTitle">Channels</div>
-              <Channel channels={channels} />
+              <div className="allCapTitle channel">Channels</div>
+              <Channel
+                channels={channels}
+                handleChannelChange={handleChannelChange}
+                currentChannel={currentChannel}
+              />
               <div className="directMessages">
-                <div className="allCapTitle">direct messages</div>
+                <div className="allCapTitle channel">direct messages</div>
                 <DirectMessage members={members} userId={userId} />
               </div>
             </div>
             <div className="channelFooterWrapper">
               <div className="channelFooter">
-                {/* <div className="channelFooterUserIcon"></div> */}
                 <UserIcon userId={userId} />
                 <div className="footerUserName overflowEllipsis">
                   <b>{userName}</b>

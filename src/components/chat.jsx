@@ -5,31 +5,8 @@ import { getMessages } from "../services/fakeMessages";
 import "../chat.css";
 
 class Chat extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { messages: [] };
-  }
-
-  componentDidMount() {
-    const messages = getMessages();
-    this.setState({ messages: messages });
-  }
-
   handleSubmit = (message) => {
-    let messages = [...this.state.messages];
-    const newMessage = this.postNewMessage(message);
-    messages.push(newMessage);
-    this.setState({ messages });
-  };
-
-  postNewMessage = (message) => {
-    return {
-      userId: "5b21ca3eeb7f6fbccd471813",
-      userName: "Sean",
-      timeStamp: Date.now(),
-      message: message,
-      conversationId: "1000",
-    };
+    this.props.addNewMessage(message);
   };
 
   render() {
@@ -37,7 +14,7 @@ class Chat extends Component {
       <div className="chatBox">
         <div className="messagesWrapper">
           <div className="messages">
-            <Conversation messages={this.state.messages} />
+            <Conversation messages={this.props.messages} />
           </div>
         </div>
         <div className="chatInput">

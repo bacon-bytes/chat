@@ -20,6 +20,20 @@
   font-size: small;
 }
 
+.menuHover {
+  cursor: pointer;
+}
+
+.menuHover:hover {
+  background-color: #48b9c7;
+  color: #ffffff;
+}
+.menuSelected {
+  background-color: #faa41a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 /* Teams */
 .teamsContainer {
   grid-column-start: 1;
@@ -71,8 +85,13 @@
 }
 
 .availableChannels {
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
   color: #c0c0c0;
+}
+.channel {
+  margin-left: 15px;
 }
 
 .directMessages {

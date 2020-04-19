@@ -9,11 +9,6 @@ const Conversation = ({ messages }) => {
   if (messages.length > 0) {
     message = messages.map((message, index) => (
       <div key={index} className="messageBox">
-        {/* <div
-          className="messageUserIcon"
-           style={{ backgroundImage: 'url("./profileIcons/man-1-100.jpg")' }}
-        >
-        </div> */}
         <UserIcon userId={messages[index].userId} />
         <div>
           <div>

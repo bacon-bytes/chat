@@ -13,9 +13,11 @@ const DirectMessage = ({ members, userId }) => {
       }
     }
     contact = users.map((userName, index) => (
-      <div key={index} className="contact">
-        {" "}
-        {users[index]}
+      <div className="menuHover">
+        <div key={index} className="contact channel">
+          {" "}
+          {users[index]}
+        </div>
       </div>
     ));
   }
