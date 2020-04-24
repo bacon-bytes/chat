@@ -3,7 +3,7 @@ import { getUsers } from "../services/fakeUsers";
 
 const DirectMessage = ({
   members,
-  userId,
+  id,
   directMessageChannels,
   handleChannelChange,
   currentChannel,
@@ -14,8 +14,8 @@ const DirectMessage = ({
 
   if (members.length > 0) {
     for (let i = 0; i < members.length; i++) {
-      let user = getUsers().find((user) => user.userId === members[i]);
-      if (members[i] != userId) {
+      let user = getUsers().find((user) => user.id === members[i]);
+      if (members[i] != id) {
         users.push(user.userName);
         for (let j = 0; j < directMessageChannels.length; j++) {
           if (directMessageChannels[j].members.includes(members[i])) {

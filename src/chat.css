@@ -42,9 +42,20 @@
   background-color: #312c29;
 }
 
-.teamIcon {
+.teamIconNoIcon {
   background-color: #26d076;
   color: #ffffff;
+  height: 45px;
+  width: 45px;
+  shape-outside: circle();
+  clip-path: circle();
+  margin: auto;
+  margin-top: 7px;
+  padding-top: 10px;
+}
+
+.teamIconWithIcon {
+  background-color: #312c29;
   height: 45px;
   width: 45px;
   shape-outside: circle();

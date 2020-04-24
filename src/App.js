@@ -10,10 +10,10 @@ import DirectMessage from "./components/directMessage";
 class App extends Component {
   state = {
     user: {
-      userId: "5b21ca3eeb7f6fbccd471813",
+      id: "5b21ca3eeb7f6fbccd471813",
       userName: "Sean",
       icon: "",
-      teams: ["5b21ca3eeb7f6fbccd470000"],
+      teams: ["5b21ca3eeb7f6fbccd470000", "5b21ca3eeb7f6fbccd470001"],
     },
     currentTeam: {
       id: "5b21ca3eeb7f6fbccd470000",
@@ -27,15 +27,14 @@ class App extends Component {
   };
 
   componentWillMount() {
-    this.setTeam();
+    this.setTeam(getTeams().find((x) => x.id === this.state.currentTeam.id));
   }
 
   componentDidMount() {
     this.setMessagesToChannel(this.state.currentChannel);
   }
 
-  setTeam = () => {
-    let team = getTeams().find((x) => x.id === this.state.currentTeam.id);
+  setTeam = (team) => {
     let teamName = team.name;
     let channels = team.channels;
     let members = team.members;
@@ -54,7 +53,7 @@ class App extends Component {
     let directMessages = team.directMessageChannels;
     let myMessages = [];
     for (let i = 0; i < directMessages.length; i++) {
-      if (directMessages[i].members.includes(this.state.user.userId)) {
+      if (directMessages[i].members.includes(this.state.user.id)) {
         myMessages.push(directMessages[i]);
       }
     }
@@ -65,6 +64,13 @@ class App extends Component {
     let currentChannel = channel;
     this.setState({ currentChannel });
     this.setMessagesToChannel(currentChannel);
+  };
+
+  handleTeamChange = (team) => {
+    let currentTeam = team;
+    this.setState({ currentTeam });
+    this.setTeam(team);
+    this.setMessagesToChannel(team.channels[0].id);
   };
 
   setMessagesToChannel = (channel) => {
@@ -85,7 +91,7 @@ class App extends Component {
 
   postNewMessage = (message) => {
     return {
-      userId: this.state.user.userId,
+      id: this.state.user.id,
       userName: this.state.user.userName,
       timeStamp: Date.now(),
       message: message,
@@ -107,12 +113,16 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="appContainer">
-          <Teams className="teamsContainer" teams={user.teams} />
+          <Teams
+            className="teamsContainer"
+            teams={user.teams}
+            handleTeamChange={this.handleTeamChange}
+          />
           <Channels
             className="channelsContainer"
             currentTeamId={currentTeam.id}
             userName={user.userName}
-            userId={user.userId}
+            id={user.id}
             teamName={teamName}
             channels={channels}
             currentChannel={currentChannel}

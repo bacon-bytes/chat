@@ -8,7 +8,7 @@ class Channels extends Component {
   render() {
     const {
       userName,
-      userId,
+      id,
       teamName,
       channels,
       members,
@@ -34,7 +34,7 @@ class Channels extends Component {
                 <div className="allCapTitle channel">direct messages</div>
                 <DirectMessage
                   members={members}
-                  userId={userId}
+                  id={id}
                   directMessageChannels={directMessageChannels}
                   handleChannelChange={handleChannelChange}
                   currentChannel={currentChannel}
@@ -43,7 +43,7 @@ class Channels extends Component {
             </div>
             <div className="channelFooterWrapper">
               <div className="channelFooter">
-                <UserIcon userId={userId} />
+                <UserIcon id={id} />
                 <div className="footerUserName overflowEllipsis">
                   <b>{userName}</b>
                 </div>

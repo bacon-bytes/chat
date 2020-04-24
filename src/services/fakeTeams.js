@@ -2,7 +2,7 @@ const teams = [
   {
     id: "5b21ca3eeb7f6fbccd470000",
     name: "Super Cool Games",
-    icon: "",
+    icon: "./profileIcons/gameIcon.png",
     channels: [
       {
         id: "6c52ca3eeb7f6fbccd470000",
@@ -67,6 +67,25 @@ const teams = [
       "5b21ca3eeb7f6fbccd471838",
       "5b21ca3eeb7f6fbccd471839",
     ],
+  },
+  {
+    id: "5b21ca3eeb7f6fbccd470001",
+    name: "Business Bee",
+    icon: "./profileIcons/beeIcon.png",
+    channels: [
+      {
+        id: "6c52ca3eeb7f6fbccd470015",
+        name: "general",
+        members: ["5b21ca3eeb7f6fbccd471813", "5b21ca3eeb7f6fbccd471837"],
+      },
+    ],
+    directMessageChannels: [
+      {
+        id: "6c52ca3eeb7f6fbccd470083",
+        members: ["5b21ca3eeb7f6fbccd471813", "5b21ca3eeb7f6fbccd471837"],
+      },
+    ],
+    members: ["5b21ca3eeb7f6fbccd471813", "5b21ca3eeb7f6fbccd471837"],
   },
 ];
 

@@ -9,7 +9,7 @@ const Conversation = ({ messages }) => {
   if (messages.length > 0) {
     message = messages.map((message, index) => (
       <div key={index} className="messageBox">
-        <UserIcon userId={messages[index].userId} />
+        <UserIcon id={messages[index].id} />
         <div>
           <div>
             <div className="messageUserName">{messages[index].userName} </div>

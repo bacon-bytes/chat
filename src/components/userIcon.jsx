@@ -1,30 +1,12 @@
 import React from "react";
 import "../chat.css";
 import { getUsers } from "../services/fakeUsers";
+import Icon from "./common/icon";
 
-const UserIcon = ({ userId }) => {
-  let iconUrl = "";
+const UserIcon = ({ id }) => {
   const users = getUsers();
-  let userHasIcon = false;
 
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].userId === userId) {
-      iconUrl = users[i].icon;
-      if (iconUrl.length > 4) {
-        userHasIcon = true;
-      }
-    }
-  }
-  if (userHasIcon) {
-    return (
-      <div
-        className="messageUserIconNoBackground"
-        style={{ backgroundImage: `url(${iconUrl})` }}
-      ></div>
-    );
-  } else {
-    return <div className="messageUserIconWithBackground"></div>;
-  }
+  return <Icon id={id} arrayOfObjects={users} />;
 };
 
 export default UserIcon;

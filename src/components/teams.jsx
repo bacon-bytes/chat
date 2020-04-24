@@ -3,14 +3,11 @@ import "../chat.css";
 import Team from "./team";
 
 class Teams extends Component {
-  state = {};
-
   render() {
+    const { teams, handleTeamChange } = this.props;
     return (
       <div className="teams">
-        <div className="teamIcon overflowEllipsis">
-          <b>TEAM</b>
-        </div>
+        <Team teams={teams} handleTeamChange={handleTeamChange} />
       </div>
     );
   }
