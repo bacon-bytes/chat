@@ -14,6 +14,7 @@ class Channels extends Component {
       members,
       handleChannelChange,
       currentChannel,
+      directMessageChannels,
     } = this.props;
     return (
       <React.Fragment>
@@ -31,7 +32,13 @@ class Channels extends Component {
               />
               <div className="directMessages">
                 <div className="allCapTitle channel">direct messages</div>
-                <DirectMessage members={members} userId={userId} />
+                <DirectMessage
+                  members={members}
+                  userId={userId}
+                  directMessageChannels={directMessageChannels}
+                  handleChannelChange={handleChannelChange}
+                  currentChannel={currentChannel}
+                />
               </div>
             </div>
             <div className="channelFooterWrapper">

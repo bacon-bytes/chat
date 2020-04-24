@@ -7,9 +7,8 @@ const Channel = ({ channels, handleChannelChange, currentChannel }) => {
     title = channels.map((id, index) => {
       if (currentChannel === channels[index].id) {
         return (
-          <div className="menuSelected">
+          <div key={index} className="menuSelected">
             <div
-              key={index}
               className="channel"
               onClick={() => handleChannelChange(channels[index].id)}
             >
@@ -19,9 +18,8 @@ const Channel = ({ channels, handleChannelChange, currentChannel }) => {
         );
       } else {
         return (
-          <div className="menuHover">
+          <div key={index} className="menuHover">
             <div
-              key={index}
               className="channel"
               onClick={() => handleChannelChange(channels[index].id)}
             >

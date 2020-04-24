@@ -97,6 +97,48 @@ const messages = [
     message: "Hmm, yes, code.",
     channelId: "6c52ca3eeb7f6fbccd470001",
   },
+  {
+    userId: "5b21ca3eeb7f6fbccd471813",
+    userName: "Sean",
+    timeStamp: 1586550595667,
+    message: "Hey Lexie!",
+    channelId: "6c52ca3eeb7f6fbccd470003",
+  },
+  {
+    userId: "5b21ca3eeb7f6fbccd471813",
+    userName: "Sean",
+    timeStamp: 1586550595667,
+    message: "Yo Andy.",
+    channelId: "6c52ca3eeb7f6fbccd470004",
+  },
+  {
+    userId: "5b21ca3eeb7f6fbccd471813",
+    userName: "Sean",
+    timeStamp: 1586550595667,
+    message: "What's up Haley?",
+    channelId: "6c52ca3eeb7f6fbccd470005",
+  },
+  {
+    userId: "5b21ca3eeb7f6fbccd471837",
+    userName: "Lexie",
+    timeStamp: 1586550595667,
+    message: "Hey!",
+    channelId: "6c52ca3eeb7f6fbccd470003",
+  },
+  {
+    userId: "5b21ca3eeb7f6fbccd471838",
+    userName: "Andy",
+    timeStamp: 1586550595667,
+    message: "Yo",
+    channelId: "6c52ca3eeb7f6fbccd470004",
+  },
+  {
+    userId: "5b21ca3eeb7f6fbccd471839",
+    userName: "Haley",
+    timeStamp: 1586550595667,
+    message: "Hey!",
+    channelId: "6c52ca3eeb7f6fbccd470005",
+  },
 ];
 
 export function getMessages() {

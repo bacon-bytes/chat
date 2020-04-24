@@ -5,6 +5,7 @@ import Chat from "./components/chat";
 import Teams from "./components/teams";
 import Channels from "./components/channels";
 import "./chat.css";
+import DirectMessage from "./components/directMessage";
 
 class App extends Component {
   state = {
@@ -19,6 +20,7 @@ class App extends Component {
     },
     teamName: "",
     channels: [],
+    directMessageChannels: [],
     currentChannel: "",
     members: [],
     messages: [],
@@ -38,7 +40,25 @@ class App extends Component {
     let channels = team.channels;
     let members = team.members;
     let currentChannel = channels[0].id;
-    this.setState({ teamName, channels, members, currentChannel });
+    let directMessageChannels = this.filterMyDirectMessages(team);
+    this.setState({
+      teamName,
+      channels,
+      members,
+      currentChannel,
+      directMessageChannels,
+    });
+  };
+
+  filterMyDirectMessages = (team) => {
+    let directMessages = team.directMessageChannels;
+    let myMessages = [];
+    for (let i = 0; i < directMessages.length; i++) {
+      if (directMessages[i].members.includes(this.state.user.userId)) {
+        myMessages.push(directMessages[i]);
+      }
+    }
+    return myMessages;
   };
 
   handleChannelChange = (channel) => {
@@ -82,6 +102,7 @@ class App extends Component {
       channels,
       members,
       messages,
+      directMessageChannels,
     } = this.state;
     return (
       <React.Fragment>
@@ -97,6 +118,7 @@ class App extends Component {
             currentChannel={currentChannel}
             members={members}
             handleChannelChange={this.handleChannelChange}
+            directMessageChannels={directMessageChannels}
           />
           <Chat
             className="chatContainer"
