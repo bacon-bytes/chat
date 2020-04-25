@@ -3,7 +3,7 @@ import { getTeams } from "../services/fakeTeams";
 import "../chat.css";
 import TeamIcon from "./teamIcon";
 
-const Team = ({ teams, handleTeamChange }) => {
+const Team = ({ teams, handleTeamChange, currentTeamId }) => {
   let team;
   let teamNames = [];
   for (let i = 0; i < teams.length; i++) {
@@ -13,7 +13,11 @@ const Team = ({ teams, handleTeamChange }) => {
   team = teams.map((id, index) => {
     return (
       <div key={index}>
-        <TeamIcon id={teams[index]} handleTeamChange={handleTeamChange} />
+        <TeamIcon
+          id={teams[index]}
+          handleTeamChange={handleTeamChange}
+          currentTeamId={currentTeamId}
+        />
       </div>
     );
   });

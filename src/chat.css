@@ -57,7 +57,6 @@
 .teamIconWithIcon {
   background-color: #312c29;
   background-repeat: no-repeat;
-
   background-position: center center;
   height: 45px;
   width: 45px;
@@ -73,7 +72,6 @@
 }
 
 .teamHover:hover {
-  background-color: #312c29;
   height: 50px;
   width: 50px;
   clip-path: polygon(
@@ -90,10 +88,14 @@
   margin-top: 7px;
   padding-top: 10px;
 }
+
 .teamSelected {
   background-color: #faa41a;
-  color: #ffffff;
-  cursor: pointer;
+  height: 45px;
+  width: 12px;
+  clip-path: circle(25% at 0 50%);
+  position: absolute;
+  float: left;
 }
 
 /* Channels */

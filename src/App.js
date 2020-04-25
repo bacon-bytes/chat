@@ -38,7 +38,7 @@ class App extends Component {
     let teamName = team.name;
     let channels = team.channels;
     let members = team.members;
-    let currentChannel = channels[0].id;
+    let currentChannel = team.channels[0].id;
     let directMessageChannels = this.filterMyDirectMessages(team);
     this.setState({
       teamName,
@@ -117,6 +117,7 @@ class App extends Component {
             className="teamsContainer"
             teams={user.teams}
             handleTeamChange={this.handleTeamChange}
+            currentTeamId={currentTeam.id}
           />
           <Channels
             className="channelsContainer"

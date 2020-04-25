@@ -4,10 +4,14 @@ import Team from "./team";
 
 class Teams extends Component {
   render() {
-    const { teams, handleTeamChange } = this.props;
+    const { teams, handleTeamChange, currentTeamId } = this.props;
     return (
       <div className="teams">
-        <Team teams={teams} handleTeamChange={handleTeamChange} />
+        <Team
+          teams={teams}
+          handleTeamChange={handleTeamChange}
+          currentTeamId={currentTeamId}
+        />
       </div>
     );
   }

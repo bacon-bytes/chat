@@ -1,12 +1,14 @@
 import React from "react";
 import { getTeams } from "../services/fakeTeams";
 
-const TeamIcon = ({ id, handleTeamChange }) => {
+const TeamIcon = ({ id, handleTeamChange, currentTeamId }) => {
   let iconUrl = "";
   let teamName = "";
   let team;
   const teams = getTeams();
   let teamHasIcon = false;
+  let teamClassName;
+  let wrapperClassName;
 
   for (let i = 0; i < teams.length; i++) {
     if (teams[i].id === id) {
@@ -18,24 +20,27 @@ const TeamIcon = ({ id, handleTeamChange }) => {
       }
     }
   }
+  if (team.id === currentTeamId) {
+    wrapperClassName = "teamSelected";
+  }
   if (teamHasIcon) {
-    return (
+    teamClassName = "teamIconWithIcon teamHover";
+  } else {
+    teamClassName = "teamIconNoIcon  teamHover overflowEllipsis";
+  }
+
+  return (
+    <div>
+      <div className={wrapperClassName}></div>
       <div
-        className="teamIconWithIcon teamHover"
+        className={teamClassName}
         style={{ backgroundImage: `url(${iconUrl})` }}
         onClick={() => handleTeamChange(team)}
-      ></div>
-    );
-  } else {
-    return (
-      <div
-        className="teamIconNoIcon overflowEllipsis"
-        onClick={() => handleTeamChange(team)}
       >
-        {teamName}{" "}
+        {!teamHasIcon && teamName}
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default TeamIcon;
