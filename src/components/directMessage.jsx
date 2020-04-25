@@ -11,6 +11,7 @@ const DirectMessage = ({
   let contact;
   const users = [];
   const directMessageIds = [];
+  let dmClassName = "";
 
   if (members.length > 0) {
     for (let i = 0; i < members.length; i++) {
@@ -26,30 +27,21 @@ const DirectMessage = ({
     }
     contact = users.map((userName, index) => {
       if (currentChannel === directMessageIds[index]) {
-        return (
-          <div key={index} className="menuSelected">
-            <div
-              className="contact channel"
-              onClick={() => handleChannelChange(directMessageIds[index])}
-            >
-              {" "}
-              {users[index]}
-            </div>
-          </div>
-        );
+        dmClassName = "menuSelected";
       } else {
-        return (
-          <div key={index} className="menuHover">
-            <div
-              className="contact channel"
-              onClick={() => handleChannelChange(directMessageIds[index])}
-            >
-              {" "}
-              {users[index]}
-            </div>
-          </div>
-        );
+        dmClassName = "menuHover";
       }
+      return (
+        <div key={index} className={dmClassName}>
+          <div
+            className="contact channel"
+            onClick={() => handleChannelChange(directMessageIds[index])}
+          >
+            {" "}
+            {users[index]}
+          </div>
+        </div>
+      );
     });
   }
 

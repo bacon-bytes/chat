@@ -5,6 +5,7 @@ const Icon = ({ id, arrayOfObjects }) => {
   let iconUrl = "";
   const object = arrayOfObjects;
   let userHasIcon = false;
+  let iconClassName = "";
 
   for (let i = 0; i < object.length; i++) {
     if (object[i].id === id) {
@@ -15,15 +16,16 @@ const Icon = ({ id, arrayOfObjects }) => {
     }
   }
   if (userHasIcon) {
-    return (
-      <div
-        className="messageUserIconNoBackground"
-        style={{ backgroundImage: `url(${iconUrl})` }}
-      ></div>
-    );
+    iconClassName = "messageUserIconNoBackground";
   } else {
-    return <div className="messageUserIconWithBackground"></div>;
+    iconClassName = "messageUserIconWithBackground";
   }
+  return (
+    <div
+      className={iconClassName}
+      style={{ backgroundImage: `url(${iconUrl})` }}
+    ></div>
+  );
 };
 
 export default Icon;
