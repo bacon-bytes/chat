@@ -21,7 +21,7 @@ const TeamIcon = ({ id, handleTeamChange }) => {
   if (teamHasIcon) {
     return (
       <div
-        className="teamIconWithIcon"
+        className="teamIconWithIcon teamHover"
         style={{ backgroundImage: `url(${iconUrl})` }}
         onClick={() => handleTeamChange(team)}
       ></div>

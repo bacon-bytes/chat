@@ -56,6 +56,9 @@
 
 .teamIconWithIcon {
   background-color: #312c29;
+  background-repeat: no-repeat;
+
+  background-position: center center;
   height: 45px;
   width: 45px;
   shape-outside: circle();
@@ -63,6 +66,34 @@
   margin: auto;
   margin-top: 7px;
   padding-top: 10px;
+}
+
+.teamHover {
+  cursor: pointer;
+}
+
+.teamHover:hover {
+  background-color: #312c29;
+  height: 50px;
+  width: 50px;
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+  margin: auto;
+  margin-top: 7px;
+  padding-top: 10px;
+}
+.teamSelected {
+  background-color: #faa41a;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 /* Channels */
