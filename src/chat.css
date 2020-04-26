@@ -3,7 +3,7 @@
   /* https://slackthemes.net/#/system76 */
 }
 
-.appContainer {
+.chatContainer {
   display: grid;
   grid-template-columns: minmax(55px, 1fr) minmax(150px, 2fr) 10fr;
   grid-template-rows: 100vh;
@@ -32,6 +32,24 @@
   background-color: #faa41a;
   color: #ffffff;
   cursor: pointer;
+}
+/* Login */
+.loginBackdrop {
+  background-color: #574f4a;
+  color: #ffffff;
+  height: 100vh;
+}
+.loginContent {
+  background-color: #312c29;
+  border-radius: 25px;
+  width: 450px;
+  height: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 7px;
 }
 
 /* Teams */
