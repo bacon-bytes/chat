@@ -33,7 +33,7 @@
   color: #ffffff;
   cursor: pointer;
 }
-/* Login */
+/* Login and Signup */
 .loginBackdrop {
   background-color: #574f4a;
   color: #ffffff;
@@ -43,13 +43,34 @@
   background-color: #312c29;
   border-radius: 25px;
   width: 450px;
-  height: 350px;
+  height: 400px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 7px;
+}
+.signupContent {
+  background-color: #312c29;
+  border-radius: 25px;
+  width: 450px;
+  height: 550px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 7px;
+}
+.toAnotherForm {
+  position: fixed;
+  bottom: 0;
+  right: 3;
+  color: #faa41a;
+}
+.toAnotherForm:hover {
+  color: #48b9c7;
 }
 
 /* Teams */

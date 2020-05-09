@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Chat from "./components/chat";
-import "./chat.css";
 import Login from "./components/login";
+import Signup from "./components/signup";
+import "./chat.css";
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <React.Fragment>
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
           <Route path="/chat" component={Chat} />
           <Route path="/" exact component={Chat} />
         </Switch>
